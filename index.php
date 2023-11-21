@@ -8,6 +8,7 @@
 <body>
     <form action="replace_word.php" method="POST">
 	    <input type="text" name="replace-word" placeholder="Insert word to replace...">
+        <input type="text" name="new-word" placeholder="Insert the new word...">
 	    <input type="submit" value="Send">
     </form>
 </body>
