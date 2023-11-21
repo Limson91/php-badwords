@@ -1,4 +1,7 @@
 <?php 
+
+    $form_word = $_POST['replace-word'];
+
     $text = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.";
 ?>
 
@@ -11,6 +14,12 @@
 </head>
 <body>
     <p><?php echo $text; ?></p>
-    <p>TESTO CENSURATO: <?php echo str_replace('Lorem', '***', $text); ?></p>
+    <p>Lunghezza testo originale: <?php echo strlen($text) ?> caratteri.</p>
+
+    <?php
+        $testo_censurato = str_ireplace($form_word, '***', $text);
+    ?>
+    <p>TESTO CENSURATO: <?php echo $testo_censurato; ?></p>
+    <p>Lunghezza testo censurato: <?php echo strlen($testo_censurato) ?> caratteri.</p>
 </body>
 </html>
